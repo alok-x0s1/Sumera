@@ -1,36 +1,188 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Sumo | 🦑
+
+Welcome to the **Sumo** app! This project is designed to help you manage your finances effectively by tracking your expenses, setting budgets, and analyzing your spending habits. Built using modern technologies like **Next.js App Router**, **Tailwind CSS**, **Framer Motion**, and **Drizzle ORM**, this app provides an intuitive and smooth user experience.
+
+## Table of Contents
+
+- [Sumo | 🦑](#sumo--)
+  - [Table of Contents](#table-of-contents)
+  - [Demo](#demo)
+  - [Features](#features)
+  - [Tech Stack](#tech-stack)
+  - [Prerequisites](#prerequisites)
+  - [Getting Started](#getting-started)
+    - [1. Clone the Repository](#1-clone-the-repository)
+    - [2. Install Dependencies](#2-install-dependencies)
+    - [3. Setup Environment Variables](#3-setup-environment-variables)
+    - [4. Run the Development Server](#4-run-the-development-server)
+- [Overview](#overview)
+  - [Home Page](#home-page)
+  - [Sign-up Page](#sign-up-page)
+  - [Dashboard](#dashboard)
+  - [Project Structure](#project-structure)
+  - [Available Scripts](#available-scripts)
+  - [Folder Structure](#folder-structure)
+  - [Environment Variables](#environment-variables)
+  - [Contributing](#contributing)
+
+## Demo
+
+You can check out the live demo of the project [here](#).
+
+## Features
+
+-   **Expense Tracking**: Track and categorize your daily expenses.
+-   **Budget Management**: Set budgets for different categories and monitor them.
+-   **Visual Insights**: Get a visual breakdown of your expenses using charts and graphs.
+-   **Authentication**: Secure user authentication using `@clerk/nextjs`.
+-   **Responsive Design**: Optimized for mobile, tablet, and desktop views.
+-   **Animated UI**: Smooth animations and transitions using Framer Motion.
+-   **User Dashboard**: Manage and view your expenses and budgets from a single dashboard.
+
+## Tech Stack
+
+-   **Frontend**: Next.js, Tailwind CSS, Framer Motion
+-   **Backend**: Next.js API Routes, Drizzle ORM
+-   **Database**: PostgreSQL
+-   **Authentication**: Clerk.js
+-   **Deployment**: Vercel
+
+## Prerequisites
+
+Make sure you have the following installed before starting:
+
+-   [Node.js](https://nodejs.org/) (v16 or above)
+-   [Yarn](https://yarnpkg.com/) or npm
+-   [PostgreSQL](https://www.postgresql.org/) database
 
 ## Getting Started
 
-First, run the development server:
+Follow these steps to get the project up and running locally:
+
+### 1. Clone the Repository
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/alok-x0s1/Sumo.git
+cd Sumo
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Install Dependencies
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+# Using Yarn
+yarn install
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+# Or using npm
+npm install
+```
 
-## Learn More
+### 3. Setup Environment Variables
 
-To learn more about Next.js, take a look at the following resources:
+Create a `.env.local` file in the root directory and add the following environment variables:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```env
+# Clerk.js Configuration
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=<your-clerk-publishable-key>
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+# Clerk.js Secret Key
+CLERK_SECRET_KEY=<your-clerk-secret-key>
 
-## Deploy on Vercel
+# Clerk.js Sign-in and Sign-up URLs
+NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
+NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+# Database URL
+NEXT_PUBLIC_DATABASE_URL=<your-postgres-database-url>
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 4. Run the Development Server
+
+Start the app in development mode:
+
+```bash
+# Using Yarn
+yarn dev
+
+# Or using npm
+npm run dev
+```
+
+The app should now be running on [http://localhost:3000](http://localhost:3000).
+
+# Overview
+
+This is a personal finance app that helps you track your expenses, set budgets, and analyze your spending habits.
+
+## Home Page
+
+The home page is the first page that the user sees when they visit the app. It is the landing page. It has a hero section with a sign-in button.
+
+![Home Page](./public/home.png)
+
+## Sign-up Page
+
+The sign-up page is the page that the user sees when they click the sign-in button on the home page. It is the page that allows the user to sign up for the app.
+
+![Sign-up Page](./public/signup.png)
+
+## Dashboard
+
+The dashboard is the page that the user sees when they sign in to the app. It is the page that allows the user to manage their expenses and budgets.
+
+![Dashboard](./public/dashboard.png)
+
+## Project Structure
+
+Something like this:
+
+```bash
+.
+├── README.md
+├── .env.local
+├── public
+│   └── finance-dashboard.png       # Static image files
+├── src
+│   ├── app
+│   │   ├── layout.tsx              # Application layout file
+│   │   ├── page.tsx                # Main page
+│   │   ├── dashboard               # Dashboard-related pages
+│   │   │   └── page.tsx            # Dashboard page
+│   │   └── sign-in                 # Sign-in related pages
+│   ├── components
+│   │   ├── Hero.tsx                # Hero section component
+│   │   ├── Navbar.tsx              # Navigation bar
+│   │   └── Footer.tsx              # Footer component
+│   ├── hooks                       # Custom hooks
+│   ├── lib
+│   │   └── drizzle.ts              # Drizzle ORM configuration
+│   ├── pages                       # Next.js traditional pages
+│   ├── styles                      # Global styles and configurations
+│   │   └── globals.css
+├── tailwind.config.js              # Tailwind CSS configuration
+├── tsconfig.json                   # TypeScript configuration
+└── next.config.js                  # Next.js configuration
+```
+
+## Available Scripts
+
+Here are some commonly used scripts to help manage the project:
+
+-   **`npm run dev`**: Start the development server.
+-   **`npm run build`**: Create an optimized production build.
+-   **`npm run start`**: Start the production server.
+
+## Folder Structure
+
+The folder structure follows Next.js conventions, separating components, hooks, styles, and API routes for a clean and maintainable architecture.
+
+## Environment Variables
+
+Make sure to set up the environment variables in a `.env.local` file as mentioned in the [Getting Started](#getting-started) section.
+
+## Contributing
+
+Contributions are welcome! Please follow these guidelines:
+
+1. Fork the repository.
+2. Create a new branch (`feat/your-feature`).
+3. Open a Pull Request with a detailed description of your changes.

@@ -4,7 +4,6 @@ import {
 	varchar,
 	timestamp,
 	integer,
-	numeric,
 } from "drizzle-orm/pg-core";
 
 export const Budgets = pgTable("budgets", {
