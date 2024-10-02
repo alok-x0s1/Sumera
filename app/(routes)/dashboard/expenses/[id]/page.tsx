@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { desc, eq, getTableColumns, sql } from "drizzle-orm";
+import { and, desc, eq, getTableColumns, sql } from "drizzle-orm";
 import { Budgets, Expenses } from "@/utils/schema";
 import db from "@/utils/dbConfig";
 import { useUser } from "@clerk/nextjs";
@@ -45,21 +45,20 @@ const ExpenseDetails = ({ params }: { params: { id: string } }) => {
 		const res = await db
 			.select({
 				...getTableColumns(Budgets),
-				totalSpend: sql`sum(${Expenses.amount})`.mapWith(Number),
-				totalItems: sql`count(${Expenses.id})`.mapWith(Number),
+				totalSpend: sql `sum(${Expenses.amount})`.mapWith(Number),
+				totalItems: sql `count(${Expenses.id})`.mapWith(Number),
 			})
 			.from(Budgets)
+			.leftJoin(Expenses, eq(Budgets.id, Expenses.budgetId))
 			.where(
-				eq(
-					Budgets.createdBy,
-					user?.primaryEmailAddress?.emailAddress || ""
+				and(
+					eq(Budgets.createdBy, user?.primaryEmailAddress?.emailAddress || ""),
+					eq(Budgets.id, Number(params.id))
 				)
 			)
-			.where(eq(Budgets.id, Number(params.id)))
-			.leftJoin(Expenses, eq(Budgets.id, Expenses.budgetId))
 			.groupBy(Budgets.id);
 
-		setBudget(res[0]);
+		setBudget(res[0] as BudgetType);
 		getExpenseList();
 	};
 
@@ -74,7 +73,7 @@ const ExpenseDetails = ({ params }: { params: { id: string } }) => {
 	};
 
 	useEffect(() => {
-		if (user) getExpensesInfo();
+		user && getExpensesInfo();
 	}, [user]);
 
 	const deleteBudget = async (id: number) => {
