@@ -34,7 +34,7 @@ const ExpenseDetails = () => {
 	};
 
 	useEffect(() => {
-		user && getAllExpenses();
+		if (user) getAllExpenses();
 	}, [user]);
 
 	const skeletonLoader = (

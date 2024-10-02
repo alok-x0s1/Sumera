@@ -13,7 +13,7 @@ import { useSidemenu } from "@/context/SidemenuContext";
 const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
 	const { user } = useUser();
 	const router = useRouter();
-	const { open, setOpen } = useSidemenu();
+	const { open } = useSidemenu();
 
 	const checkUserBudget = async () => {
 		const res = await db
@@ -32,7 +32,7 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
 	};
 
 	useEffect(() => {
-		user && checkUserBudget();
+		if (user) checkUserBudget();
 	}, [user]);
 
 	return (

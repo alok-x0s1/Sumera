@@ -70,7 +70,7 @@ const Testimonials = () => (
 								{testimonial.position}
 							</p>
 							<p className="mt-4 text-xl text-muted-foreground">
-								"{testimonial.review}"
+								&ldquo;{testimonial.review}&rdquo;
 							</p>
 						</div>
 						<div className="absolute bottom-0 right-0 w-16 h-16 bg-gradient-to-tr from-chart-2 to-chart-1 opacity-10 rounded-full blur-3xl transform translate-x-8 translate-y-8 group-hover:translate-x-4 group-hover:translate-y-4 transition duration-500" />

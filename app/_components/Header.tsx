@@ -6,7 +6,7 @@ import { useUser, UserButton } from "@clerk/nextjs";
 import Link from "next/link";
 
 const Header = () => {
-	const { user, isSignedIn } = useUser();
+	const { isSignedIn } = useUser();
 
 	return (
 		<motion.header

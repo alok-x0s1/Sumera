@@ -74,7 +74,7 @@ const ExpenseDetails = ({ params }: { params: { id: string } }) => {
 	};
 
 	useEffect(() => {
-		user && getExpensesInfo();
+		if (user) getExpensesInfo();
 	}, [user]);
 
 	const deleteBudget = async (id: number) => {
