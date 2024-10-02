@@ -45,14 +45,17 @@ const ExpenseDetails = ({ params }: { params: { id: string } }) => {
 		const res = await db
 			.select({
 				...getTableColumns(Budgets),
-				totalSpend: sql `sum(${Expenses.amount})`.mapWith(Number),
-				totalItems: sql `count(${Expenses.id})`.mapWith(Number),
+				totalSpend: sql`sum(${Expenses.amount})`.mapWith(Number),
+				totalItems: sql`count(${Expenses.id})`.mapWith(Number),
 			})
 			.from(Budgets)
 			.leftJoin(Expenses, eq(Budgets.id, Expenses.budgetId))
 			.where(
 				and(
-					eq(Budgets.createdBy, user?.primaryEmailAddress?.emailAddress || ""),
+					eq(
+						Budgets.createdBy,
+						user?.primaryEmailAddress?.emailAddress || ""
+					),
 					eq(Budgets.id, Number(params.id))
 				)
 			)
@@ -73,7 +76,7 @@ const ExpenseDetails = ({ params }: { params: { id: string } }) => {
 	};
 
 	useEffect(() => {
-		user && getExpensesInfo();
+		if (user) getExpensesInfo();
 	}, [user]);
 
 	const deleteBudget = async (id: number) => {
