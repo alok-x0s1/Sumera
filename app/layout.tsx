@@ -10,8 +10,8 @@ export const metadata: Metadata = {
 	description:
 		"Sumo is a personal finance app that helps you track your expenses and budgets.",
 };
-
-export const outfit = Outfit({
+ 
+const outfit = Outfit({
 	subsets: ["latin"],
 	weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
