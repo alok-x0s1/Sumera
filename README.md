@@ -1,10 +1,10 @@
-# Sumo | 🦑
+# Sumera | 🦑
 
-Welcome to the **Sumo** app! This project is designed to help you manage your finances effectively by tracking your expenses, setting budgets, and analyzing your spending habits. Built using modern technologies like **Next.js App Router**, **Tailwind CSS**, **Framer Motion**, and **Drizzle ORM**, this app provides an intuitive and smooth user experience.
+Welcome to the **Sumera** app! This project is designed to help you manage your finances effectively by tracking your expenses, setting budgets, and analyzing your spending habits. Built using modern technologies like **Next.js App Router**, **Tailwind CSS**, **Framer Motion**, and **Drizzle ORM**, this app provides an intuitive and smooth user experience.
 
 ## Table of Contents
 
-- [Sumo | 🦑](#sumo--)
+- [Sumera | 🦑](#sumera--)
   - [Table of Contents](#table-of-contents)
   - [Demo](#demo)
   - [Features](#features)
@@ -62,8 +62,8 @@ Follow these steps to get the project up and running locally:
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/alok-x0s1/Sumo.git
-cd Sumo
+git clone https://github.com/alok-x0s1/Sumera.git
+cd Sumera
 ```
 
 ### 2. Install Dependencies
