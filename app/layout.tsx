@@ -6,9 +6,9 @@ import { Toaster } from "@/components/ui/sonner";
 import SidemenuProvider from "@/context/SidemenuContext";
 
 export const metadata: Metadata = {
-	title: "Sumo | 🦑",
+	title: "Sumera | 🦑",
 	description:
-		"Sumo is a personal finance app that helps you track your expenses and budgets.",
+		"Sumera is a personal finance app that helps you track your expenses and budgets.",
 };
  
 const outfit = Outfit({

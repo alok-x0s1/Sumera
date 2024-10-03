@@ -47,7 +47,7 @@ const SideNav = () => {
 		<div className="flex flex-col w-64 h-screen shadow-xl pt-6">
 			<Link href="/" onClick={() => setOpen(false)}>
 				<h1 className="text-3xl font-extrabold tracking-tight text-primary px-6">
-					Sumo
+					Sumera
 				</h1>
 			</Link>
 

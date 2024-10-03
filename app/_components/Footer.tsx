@@ -14,7 +14,7 @@ const Footer = () => {
 					transition={{ duration: 0.5, delay: 0.2 }}
 					className="flex flex-col gap-4"
 				>
-					<h2 className="text-3xl font-extrabold">Sumo</h2>
+					<h2 className="text-3xl font-extrabold">Sumera</h2>
 					<p className="text-sm text-muted-foreground">
 						Empowering your business with real-time analytics and
 						custom reports.
@@ -86,7 +86,7 @@ const Footer = () => {
 						</Link>
 					</div>
 					<p className="text-sm text-muted-foreground">
-						Email: support@sumo.com
+						Email: support@sumera.com
 					</p>
 					<p className="text-sm text-muted-foreground">
 						Phone: +1 (123) 456-7890
@@ -102,7 +102,7 @@ const Footer = () => {
 						transition={{ duration: 0.6, delay: 1 }}
 						className="text-sm text-muted-foreground"
 					>
-						&copy; {new Date().getFullYear()} Sumo. All rights
+						&copy; {new Date().getFullYear()} Sumera. All rights
 						reserved.
 					</motion.p>
 					<motion.nav

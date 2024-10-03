@@ -16,7 +16,7 @@ const Header = () => {
 			transition={{ duration: 0.3 }}
 		>
 			<Link href="/" className="text-3xl tracking-tighter font-bold">
-				Sumo
+				Sumera
 			</Link>
 			{isSignedIn ? (
 				<UserButton />

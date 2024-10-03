@@ -7,7 +7,7 @@ export default function Page() {
 			<div className="lg:grid lg:min-h-screen lg:grid-cols-12">
 				<section className="relative flex h-32 items-end bg-gray-900 lg:col-span-5 lg:h-full xl:col-span-6">
 					<Image
-						alt="Sumo"
+						alt="Sumera"
 						src="/img.avif"
 						className="absolute inset-0 h-full w-full object-cover opacity-80"
 						width={1000}
@@ -31,7 +31,7 @@ export default function Page() {
 						</a>
 
 						<h2 className="mt-6 text-2xl font-bold text-white sm:text-3xl md:text-4xl">
-							Welcome to Sumo 🦑
+							Welcome to Sumera 🦑
 						</h2>
 
 						<div className="mt-4 leading-relaxed text-white/90">
@@ -71,7 +71,7 @@ export default function Page() {
 							</a>
 
 							<h2 className="mt-6 text-2xl font-bold sm:text-3xl md:text-4xl">
-								Welcome to Sumo 🦑
+								Welcome to Sumera 🦑
 							</h2>
 
 							<div className="mt-4 leading-relaxed text-gray-500">
